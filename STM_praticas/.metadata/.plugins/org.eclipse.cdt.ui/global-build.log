@@ -1,0 +1,46 @@
+15:40:29 **** Incremental Build of configuration Debug for project projeto_final3 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:108:4: warning: unused variable 'serial_data' [-Wunused-variable]
+  108 |    serial_data = 0x01FF;            // dado a serializar (dig | val7seg)
+      |    ^~~~~~~~~~~
+../Core/Src/main.c:107:12: warning: unused variable 'val7seg' [-Wunused-variable]
+  107 |    int16_t val7seg = 0x00FF,            // inicia 7-seg com 0xF (tudo apagado)
+      |            ^~~~~~~
+../Core/Src/main.c:106:7: warning: unused variable 'dezMin' [-Wunused-variable]
+  106 |       dezMin = 0;
+      |       ^~~~~~
+../Core/Src/main.c:105:5: warning: unused variable 'uniMin' [-Wunused-variable]
+  105 |     uniMin = 0,
+      |     ^~~~~~
+../Core/Src/main.c:104:5: warning: unused variable 'dezSeg' [-Wunused-variable]
+  104 |     dezSeg = 0,                      // ini dezena de seg
+      |     ^~~~~~
+../Core/Src/main.c:103:5: warning: unused variable 'uniSeg' [-Wunused-variable]
+  103 |     uniSeg = 0,                      // ini unidade de seg
+      |     ^~~~~~
+../Core/Src/main.c:102:8: warning: unused variable 'decSeg' [-Wunused-variable]
+  102 |    int decSeg = 0,                      // ini decimo de seg
+      |        ^~~~~~
+arm-none-eabi-gcc -o "projeto_final3.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alexz\Documents\STM_projetos\projeto_final3\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="projeto_final3.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: projeto_final3.elf
+ 
+arm-none-eabi-size   projeto_final3.elf 
+arm-none-eabi-objdump -h -S  projeto_final3.elf  > "projeto_final3.list"
+arm-none-eabi-objcopy  -O binary  projeto_final3.elf  "projeto_final3.bin"
+   text	   data	    bss	    dec	    hex	filename
+  14056	     24	   1792	  15872	   3e00	projeto_final3.elf
+Finished building: default.size.stdout
+ 
+Finished building: projeto_final3.bin
+ 
+Finished building: projeto_final3.list
+ 
+15:40:36 **** Incremental Build of configuration Debug for project projeto_final3 ****
+make -j16 all 
+arm-none-eabi-size   projeto_final3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14056	     24	   1792	  15872	   3e00	projeto_final3.elf
+Finished building: default.size.stdout
+ 

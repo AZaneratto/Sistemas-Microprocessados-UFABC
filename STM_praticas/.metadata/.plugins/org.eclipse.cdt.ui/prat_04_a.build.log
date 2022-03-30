@@ -1,0 +1,66 @@
+21:29:29 **** Incremental Build of configuration Debug for project prat_04_a ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:158:6: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  158 |   if(modo_padrao = 1){
+      |      ^~~~~~~~~~~
+../Core/Src/main.c:252:6: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  252 |   if(modo_padrao = 2){
+      |      ^~~~~~~~~~~
+../Core/Src/main.c:487:13: error: invalid storage class for function 'MX_NVIC_Init'
+  487 | static void MX_NVIC_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:505:13: error: invalid storage class for function 'MX_GPIO_Init'
+  505 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:560:1: error: expected declaration or statement at end of input
+  560 | }
+      | ^
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:62:13: warning: 'MX_GPIO_Init' used but never defined
+   62 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:63:13: warning: 'MX_NVIC_Init' used but never defined
+   63 | static void MX_NVIC_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:162:8: warning: statement will never be executed [-Wswitch-unreachable]
+  162 |      if(cont_led > 4) cont_led = 1;
+      |        ^
+../Core/Src/main.c:194:10: warning: statement will never be executed [-Wswitch-unreachable]
+  194 |        if(cont_led ==2){
+      |          ^
+../Core/Src/main.c:224:9: warning: statement will never be executed [-Wswitch-unreachable]
+  224 |       if(cont_led ==3){
+      |         ^
+../Core/Src/main.c:256:7: warning: statement will never be executed [-Wswitch-unreachable]
+  256 |     if(cont_led > 4) cont_led = 1;
+      |       ^
+../Core/Src/main.c:288:9: warning: statement will never be executed [-Wswitch-unreachable]
+  288 |       if(cont_led ==2){
+      |         ^
+../Core/Src/main.c:318:8: warning: statement will never be executed [-Wswitch-unreachable]
+  318 |      if(cont_led ==3){
+      |        ^
+../Core/Src/main.c:349:8: warning: statement will never be executed [-Wswitch-unreachable]
+  349 |      if(cont_led ==4){
+      |        ^
+At top level:
+../Core/Src/main.c:551:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  551 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:505:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  505 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:487:13: warning: 'MX_NVIC_Init' defined but not used [-Wunused-function]
+  487 | static void MX_NVIC_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:449:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  449 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+
+21:29:29 Build Failed. 4 errors, 15 warnings. (took 286ms)
+

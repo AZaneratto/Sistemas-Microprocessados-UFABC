@@ -1,0 +1,10 @@
+19:08:54 **** Incremental Build of configuration Debug for project prat_02_a ****
+make -j16 all 
+arm-none-eabi-size   prat_02_a.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5056	     20	   1588	   6664	   1a08	prat_02_a.elf
+Finished building: default.size.stdout
+ 
+
+19:08:54 Build Finished. 0 errors, 0 warnings. (took 212ms)
+
